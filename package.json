@@ -9,7 +9,8 @@
     "lint": "next lint",
     "create-images": "node scripts/create-all-images.js",
     "test-destinations": "node -e \"const { getSortedPostsData } = require('./lib/posts'); console.log('Destinations:', getSortedPostsData().map(d => d.slug));\"",
-    "prepare": "husky"
+    "prepare": "husky", 
+    "test": "echo 'No tests configured' && exit 0"
   },
   "dependencies": {
     "@next/third-parties": "^16.0.7",
