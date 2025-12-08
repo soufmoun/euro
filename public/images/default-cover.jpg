@@ -1,0 +1,7 @@
+<svg width="1200" height="400" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="400" fill="#1E293B"/>
+    <circle cx="300" cy="200" r="100" fill="#4F46E5" opacity="0.8"/>
+    <text x="300" y="200" font-family="Arial" font-size="60" fill="white" text-anchor="middle" dy=".3em">🌍</text>
+    <text x="600" y="180" font-family="Arial" font-size="60" fill="white" text-anchor="middle">EuroBudget</text>
+    <text x="600" y="240" font-family="Arial" font-size="30" fill="#CBD5E1" text-anchor="middle">Travel Europe for Less</text>
+  </svg>

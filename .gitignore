@@ -1,0 +1,46 @@
+# Environment variables 
+.env 
+.env.local 
+.env.development.local 
+.env.test.local 
+.env.production.local 
+*.env 
+ 
+# Supabase/PostgreSQL credentials 
+connection.env 
+database.env 
+supabase.env 
+ 
+# Prisma 
+.prisma/client 
+**/generated/ 
+ 
+# Node.js 
+node_modules/ 
+npm-debug.log* 
+yarn-debug.log* 
+yarn-error.log* 
+.pnp/ 
+.pnp.js 
+ 
+# Next.js 
+.next/ 
+out/ 
+ 
+# Production 
+build/ 
+dist/ 
+ 
+# IDE 
+.vscode/ 
+.idea/ 
+*.swp 
+*.swo 
+ 
+# OS 
+.DS_Store 
+Thumbs.db 
+ 
+# Logs 
+logs/ 
+*.log 

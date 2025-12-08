@@ -1,0 +1,43 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model ContactSubmission {
+  id           String   @id @default(cuid()) @map("id") @db.Text
+  name         String   @map("name") @db.Text
+  email        String   @map("email") @db.Text
+  subject      String   @map("subject") @db.Text
+  message      String   @map("message") @db.Text
+  inquiryType  String   @default("general") @map("inquiryType") @db.Text
+  status       String   @default("pending") @map("status") @db.Text
+  createdAt    DateTime @default(now()) @map("createdAt") @db.Timestamptz
+  updatedAt    DateTime @updatedAt @map("updatedAt") @db.Timestamptz
+  
+  @@map("ContactSubmission")
+  @@index([email])
+  @@index([createdAt])
+  @@index([status])
+}
+
+model AnalyticsEvent {
+  id        String   @id @default(cuid()) @map("id") @db.Text
+  event     String   @map("event") @db.Text
+  data      Json?    @map("data") @db.JsonB
+  timestamp DateTime? @map("timestamp") @db.Timestamptz
+  userId    String?  @map("userId") @db.Text
+  sessionId String?  @map("sessionId") @db.Text
+  ip        String   @map("ip") @db.Text
+  userAgent String   @map("userAgent") @db.Text
+  createdAt DateTime @default(now()) @map("createdAt") @db.Timestamptz
+  
+  @@map("AnalyticsEvent")
+  @@index([event])
+  @@index([timestamp])
+  @@index([userId])
+  @@index([sessionId])
+}

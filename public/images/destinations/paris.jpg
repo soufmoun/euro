@@ -1,0 +1,5 @@
+<svg width="800" height="800" xmlns="http://www.w3.org/2000/svg">
+      <rect width="800" height="800" fill="#4F46E5"/>
+      <text x="400" y="350" font-family="Arial" font-size="60" fill="white" text-anchor="middle" font-weight="bold">PARIS</text>
+      <text x="400" y="450" font-family="Arial" font-size="30" fill="white" text-anchor="middle">Budget Guide</text>
+    </svg>

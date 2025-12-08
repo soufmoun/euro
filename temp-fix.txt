@@ -1,0 +1,22 @@
+﻿// Add this at the top of your ArticleCard component
+const cardId = Math.random().toString(36).substring(7);
+console.log(`🆔 ArticleCard ${cardId} for ${post.slug}`);
+
+// Add this to your card JSX (inside the main div):
+<div className="card">
+  {/* Add debug badge */}
+  <div style={{
+    position: "absolute",
+    top: "5px",
+    left: "5px",
+    background: "red",
+    color: "white",
+    padding: "2px 5px",
+    fontSize: "10px",
+    borderRadius: "3px",
+    zIndex: 1000
+  }}>
+    {cardId}
+  </div>
+  {/* Rest of card... */}
+</div>

@@ -1,0 +1,20 @@
+#!/bin/sh
+# .husky/pre-commit
+
+# Check for accidentally committed .env files
+if git diff --cached --name-only | grep -E '\.env$|\.env\.|secret'; then
+    echo "❌ ERROR: Attempting to commit secret files!"
+    echo "Remove these files from commit:"
+    git diff --cached --name-only | grep -E '\.env$|\.env\.|secret'
+    exit 1
+fi
+
+# Check for .env.local in commit
+if git diff --cached --name-only | grep -q '\.env\.local'; then
+    echo "⚠️  WARNING: .env.local detected in commit!"
+    echo "This file should not be committed. Continue? (y/N)"
+    read -r response
+    if [[ ! "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+        exit 1
+    fi
+fi
