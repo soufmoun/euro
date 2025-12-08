@@ -8,12 +8,13 @@
     "start": "next start",
     "lint": "next lint",
     "create-images": "node scripts/create-all-images.js",
+    "vercel-build": "npm ci && npx prisma generate && npm run build",
     "test-destinations": "node -e \"const { getSortedPostsData } = require('./lib/posts'); console.log('Destinations:', getSortedPostsData().map(d => d.slug));\"",
-    "prepare": "husky", 
     "test": "echo 'No tests configured' && exit 0"
   },
   "dependencies": {
     "@next/third-parties": "^16.0.7",
+    "@popperjs/core": "^2.11.8",
     "@prisma/client": "^6.2.0",
     "bootstrap": "^5.3.8",
     "gray-matter": "^4.0.3",
@@ -34,7 +35,6 @@
     "@types/react": "19.2.7",
     "eslint": "^8.49.0",
     "eslint-config-next": "^15.5.6",
-    "husky": "^9.1.7",
     "prisma": "^6.2.0",
     "typescript": "^5.6.2"
   }
