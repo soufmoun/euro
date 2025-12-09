@@ -1,0 +1,6 @@
+{
+    "buildCommand": "npm run vercel-build",
+    "installCommand": "npm ci --no-audit --prefer-offline",
+    "outputDirectory": ".next",
+    "framework": "nextjs"
+  }
