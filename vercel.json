@@ -1,6 +1,11 @@
 {
-    "buildCommand": "npm run build",
+    "buildCommand": "NODE_OPTIONS=--max-old-space-size=4096 npm run build",
     "installCommand": "npm ci",
     "outputDirectory": ".next",
-    "framework": "nextjs"
+    "framework": "nextjs",
+    "functions": {
+      "**/*.js": {
+        "maxDuration": 60
+      }
+    }
   }
