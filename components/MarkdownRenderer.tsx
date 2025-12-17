@@ -1,19 +1,16 @@
-// components/MarkdownRenderer.tsx
-'use client'
-import React from 'react'
-import ReactMarkdown from 'react-markdown'
-import remarkGfm from 'remark-gfm'
-import Image from 'next/image';
-import dynamic from 'next/dynamic';
-
+// Current issue: Importing FadeIn dynamically but not using it
 const FadeIn = dynamic(() => import('../components/FadeIn'), {
   loading: () => <div className="opacity-0" />,
 });
 
+// Remove the dynamic import since you're not using FadeIn
+// Or actually use it:
 export default function MarkdownRenderer({ content }: { content: string }) {
   return (
-    <article className="prose">
-      <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
-    </article>
-  )
+    <FadeIn>
+      <article className="prose">
+        <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
+      </article>
+    </FadeIn>
+  );
 }

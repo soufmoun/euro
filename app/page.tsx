@@ -1,4 +1,4 @@
-// app/page.tsx - CORRECTED VERSION
+// app/page.tsx - UPDATED WITH IMAGE OPTIMIZATION
 import { getSortedPostsData } from '../lib/posts';
 import HeroSection from '../components/HeroSection';
 import SectionHeader from '../components/SectionHeader';
@@ -6,6 +6,7 @@ import ArticleCard from '../components/ArticleCard';
 import FadeIn from '../components/FadeIn';
 import Link from 'next/link';
 import ErrorBoundary from '../components/ErrorBoundary';
+import Image from 'next/image'; // ADD THIS IMPORT
 
 export default function Home() {
   const allDestinations = getSortedPostsData();
@@ -13,10 +14,10 @@ export default function Home() {
 
   // Stats data for social proof
   const stats = [
-    { number: '50K+', label: 'Travelers Helped', icon: '👥' },
-    { number: '25+', label: 'European Cities', icon: '🏙️' },
-    { number: '€45', label: 'Average Daily Cost', icon: '💶' },
-    { number: '4.9★', label: 'User Rating', icon: '⭐' }
+    { number: '12+', label: 'Destination Guides', icon: '🌍' },
+    { number: '24/7', label: 'Free Resources', icon: '📚' },
+    { number: '€45', label: 'Starting From', icon: '💶' },
+    { number: '100%', label: 'Verified Prices', icon: '✅' }
   ];
 
   // Blog posts data
@@ -27,7 +28,8 @@ export default function Home() {
       excerpt: "Everything you need to know for your first European adventure without breaking the bank. From planning to packing to saving money.",
       readTime: "12 min read",
       date: "2024-01-15",
-      category: "Planning"
+      category: "Planning",
+      image: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&auto=format&fit=crop"
     },
     {
       slug: "europe-transportation-guide",
@@ -35,7 +37,8 @@ export default function Home() {
       excerpt: "Compare trains, buses, flights, and rideshares to find the cheapest way to travel around Europe.",
       readTime: "8 min read",
       date: "2024-01-12",
-      category: "Transportation"
+      category: "Transportation",
+      image: "https://images.unsplash.com/photo-1523531294919-4bcd7c65e216?w=800&auto=format&fit=crop"
     },
     {
       slug: "europe-packing-list",
@@ -43,7 +46,8 @@ export default function Home() {
       excerpt: "Pack like a pro with our tested packing list that covers all seasons and situations.",
       readTime: "10 min read",
       date: "2024-01-10",
-      category: "Packing"
+      category: "Packing",
+      image: "https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=800&auto=format&fit=crop"
     }
   ];
 
@@ -53,25 +57,29 @@ export default function Home() {
       icon: '🚆',
       title: 'Book Trains Early',
       description: 'Save up to 60% by booking European trains 2-3 months in advance',
-      link: '/tips#transport'
+      link: '/tips#transport',
+      image: 'https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w-400&auto=format&fit=crop'
     },
     {
       icon: '🏨',
       title: 'Stay Central',
       description: 'Choose central hostels over cheap distant hotels to save transport costs',
-      link: '/tips#accommodation'
+      link: '/tips#accommodation',
+      image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&auto=format&fit=crop'
     },
     {
       icon: '🍕',
       title: 'Eat Like a Local',
       description: 'Avoid tourist restaurants - markets and bakeries are 50% cheaper',
-      link: '/tips#food'
+      link: '/tips#food',
+      image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&auto=format&fit=crop'
     },
     {
       icon: '🎫',
       title: 'Free Museum Days',
       description: 'Most European museums offer free entry on first Sundays',
-      link: '/tips#activities'
+      link: '/tips#activities',
+      image: 'https://images.unsplash.com/photo-1580569601134-2b3c4d54510a?w=400&auto=format&fit=crop'
     }
   ];
 
@@ -85,7 +93,8 @@ export default function Home() {
       countries: ["France", "Italy"],
       slug: "paris-rome-7days",
       badge: "MOST POPULAR",
-      badgeColor: "bg-primary"
+      badgeColor: "bg-primary",
+      image: "https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?w=800&auto=format&fit=crop"
     },
     {
       title: "10-Day Eastern Europe Tour", 
@@ -95,7 +104,8 @@ export default function Home() {
       countries: ["Czech Republic", "Hungary", "Austria"],
       slug: "eastern-europe-10days",
       badge: "BEST VALUE",
-      badgeColor: "bg-success"
+      badgeColor: "bg-success",
+      image: "https://images.unsplash.com/photo-1592906209472-a36b1f3782ef?w=800&auto=format&fit=crop"
     },
     {
       title: "14-Day Mediterranean Journey",
@@ -105,7 +115,8 @@ export default function Home() {
       countries: ["Spain", "France", "Italy"],
       slug: "mediterranean-14days",
       badge: "SCENIC ROUTE",
-      badgeColor: "bg-warning"
+      badgeColor: "bg-warning",
+      image: "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=800&auto=format&fit=crop"
     }
   ];
 
@@ -114,37 +125,43 @@ export default function Home() {
     {
       icon: '💶',
       title: 'Real, Recent Prices',
-      description: 'All costs are verified from trips taken within the last 6 months. No outdated 2019 prices or estimates.'
+      description: 'All costs are verified from trips taken within the last 6 months. No outdated 2019 prices or estimates.',
+      image: '/icons/money.svg'
     },
     {
       icon: '⭐',
       title: 'No Sponsored Content',
-      description: 'We don\'t accept paid promotions. Our recommendations are based on genuine experiences, not commissions.'
+      description: 'We don\'t accept paid promotions. Our recommendations are based on genuine experiences, not commissions.',
+      image: '/icons/star.svg'
     },
     {
       icon: '🗺️',
       title: 'Tested Itineraries',
-      description: 'Every route and schedule has been personally tested. We only recommend what actually works in real-world travel.'
+      description: 'Every route and schedule has been personally tested. We only recommend what actually works in real-world travel.',
+      image: '/icons/map.svg'
     },
     {
       icon: '🔍',
       title: 'Detailed Breakdowns',
-      description: 'Get exact costs for accommodation, food, transport, and activities. No hidden expenses or surprise costs.'
+      description: 'Get exact costs for accommodation, food, transport, and activities. No hidden expenses or surprise costs.',
+      image: '/icons/search.svg'
     },
     {
       icon: '🔄',
       title: 'Regularly Updated',
-      description: 'All guides are reviewed and updated quarterly to reflect current prices and travel conditions.'
+      description: 'All guides are reviewed and updated quarterly to reflect current prices and travel conditions.',
+      image: '/icons/update.svg'
     },
     {
       icon: '💬',
       title: 'Community Verified',
-      description: 'Our community of budget travelers helps verify prices and share real-time updates.'
+      description: 'Our community of budget travelers helps verify prices and share real-time updates.',
+      image: '/icons/community.svg'
     }
   ];
 
   return (
-    <ErrorBoundary> {/* ← MOVED HERE: Wrap entire page */}
+    <ErrorBoundary>
       {/* Hero Section */}
       <HeroSection 
         title="Europe for Less"
@@ -174,42 +191,40 @@ export default function Home() {
         </section>
       </FadeIn>
 
-      {/* Featured Destinations Section - FIXED VERSION */}
-{/* Featured Destinations Section */}
-<FadeIn delay={100}>
-  <section className="section-padding">
-    <div className="container">
-      <SectionHeader 
-        title="Featured Destinations"
-        subtitle={`Browse ${allDestinations.length} complete budget guides with real cost breakdowns`}
-      />
-      
-      <div className="row g-4">
-        {featuredDestinations.map((destination) => (
-          <div key={destination.slug} className="col-md-6 col-lg-4">
-            {/* SIMPLIFIED - Just pass the destination object directly */}
-            <ArticleCard post={destination} />
-          </div>
-        ))}
-      </div>
+      {/* Featured Destinations Section */}
+      <FadeIn delay={100}>
+        <section className="section-padding">
+          <div className="container">
+            <SectionHeader 
+              title="Featured Destinations"
+              subtitle={`Browse ${allDestinations.length} complete budget guides with real cost breakdowns`}
+            />
+            
+            <div className="row g-4">
+              {featuredDestinations.map((destination) => (
+                <div key={destination.slug} className="col-md-6 col-lg-4">
+                  <ArticleCard post={destination} />
+                </div>
+              ))}
+            </div>
 
-      {/* Dynamic CTA */}
-      <div className="text-center mt-5">
-        {allDestinations.length > 3 ? (
-          <Link href="/destinations" className="btn btn-primary btn-lg me-3">
-            Explore All {allDestinations.length} Destinations
-          </Link>
-        ) : (
-          <div className="alert alert-info">
-            <p className="mb-0">More destinations coming soon!</p>
+            {/* Dynamic CTA */}
+            <div className="text-center mt-5">
+              {allDestinations.length > 3 ? (
+                <Link href="/destinations" className="btn btn-primary btn-lg me-3">
+                  Explore All {allDestinations.length} Destinations
+                </Link>
+              ) : (
+                <div className="alert alert-info">
+                  <p className="mb-0">More destinations coming soon!</p>
+                </div>
+              )}
+            </div>
           </div>
-        )}
-      </div>
-    </div>
-  </section>
-</FadeIn>
+        </section>
+      </FadeIn>
 
-      {/* Quick Tips - Actionable Advice */}
+      {/* Quick Tips - Actionable Advice with Images */}
       <FadeIn delay={200}>
         <section className="section-padding bg-light">
           <div className="container">
@@ -221,9 +236,28 @@ export default function Home() {
             <div className="row g-4">
               {quickTips.map((tip, index) => (
                 <div key={index} className="col-md-6 col-lg-3">
-                  <div className="card h-100 border-0 shadow-sm hover-lift">
+                  <div className="card h-100 border-0 shadow-sm hover-lift overflow-hidden">
+                    {/* OPTIMIZED IMAGE */}
+                    <div className="position-relative" style={{ height: '150px' }}>
+                      <Image
+                        src={tip.image || '/images/placeholder.jpg'}
+                        alt={tip.title}
+                        fill
+                        sizes="(max-width: 768px) 50vw, 25vw"
+                        style={{ objectFit: 'cover' }}
+                        className="card-img-top"
+                        quality={75}
+                        placeholder="blur"
+                        blurDataURL="data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAGAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AJ//2Q=="
+                      />
+                      <div className="position-absolute top-0 start-0 m-3">
+                        <div className="bg-white rounded-circle p-2 shadow-sm">
+                          <span className="fs-4">{tip.icon}</span>
+                        </div>
+                      </div>
+                    </div>
+                    
                     <div className="card-body p-4 text-center">
-                      <div className="fs-1 mb-3">{tip.icon}</div>
                       <h5 className="card-title fw-bold mb-3">{tip.title}</h5>
                       <p className="card-text text-muted small mb-4">{tip.description}</p>
                       <Link href={tip.link} className="btn btn-outline-primary btn-sm">
@@ -247,7 +281,7 @@ export default function Home() {
         </section>
       </FadeIn>
 
-      {/* Popular Itineraries */}
+      {/* Popular Itineraries with Optimized Images */}
       <FadeIn delay={300}>
         <section className="section-padding">
           <div className="container">
@@ -259,7 +293,23 @@ export default function Home() {
             <div className="row g-4">
               {popularItineraries.map((itinerary, index) => (
                 <div key={index} className="col-md-6 col-lg-4">
-                  <div className="card h-100 border-0 shadow-sm position-relative">
+                  <div className="card h-100 border-0 shadow-sm position-relative overflow-hidden">
+                    {/* OPTIMIZED IMAGE */}
+                    <div className="position-relative" style={{ height: '180px' }}>
+                      <Image
+                        src={itinerary.image}
+                        alt={itinerary.title}
+                        fill
+                        sizes="(max-width: 768px) 50vw, 33vw"
+                        style={{ objectFit: 'cover' }}
+                        className="card-img-top"
+                        quality={80}
+                        priority={index < 2}
+                        placeholder="blur"
+                        blurDataURL="data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAGAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AJ//2Q=="
+                      />
+                    </div>
+                    
                     {itinerary.badge && (
                       <span className={`badge ${itinerary.badgeColor} position-absolute top-0 start-50 translate-middle mt-2 px-3 py-2`}>
                         {itinerary.badge}
@@ -305,7 +355,7 @@ export default function Home() {
         </section>
       </FadeIn>
 
-      {/* Blog Preview Section */}
+      {/* Blog Preview Section with Images */}
       <FadeIn delay={400}>
         <section className="section-padding bg-light">
           <div className="container">
@@ -315,9 +365,24 @@ export default function Home() {
             />
             
             <div className="row g-4">
-              {blogPosts.slice(0, 3).map((post) => (
+              {blogPosts.slice(0, 3).map((post, index) => (
                 <div key={post.slug} className="col-md-6 col-lg-4">
-                  <div className="card h-100 border-0 shadow-sm">
+                  <div className="card h-100 border-0 shadow-sm overflow-hidden">
+                    {/* OPTIMIZED BLOG IMAGE */}
+                    <div className="position-relative" style={{ height: '180px' }}>
+                      <Image
+                        src={post.image}
+                        alt={post.title}
+                        fill
+                        sizes="(max-width: 768px) 50vw, 33vw"
+                        style={{ objectFit: 'cover' }}
+                        className="card-img-top"
+                        quality={80}
+                        priority={index === 0}
+                        placeholder="blur"
+                        blurDataURL="data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAGAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AJ//2Q=="
+                      />
+                    </div>
                     <div className="card-body d-flex flex-column">
                       <span className="badge bg-primary mb-2">{post.category}</span>
                       <h5 className="card-title fw-bold">{post.title}</h5>
@@ -405,10 +470,22 @@ export default function Home() {
           <div className="container">
             <div className="row justify-content-center">
               <div className="col-lg-8">
-                <div className="card bg-gradient text-white border-0 shadow-lg" style={{
+                <div className="card bg-gradient text-white border-0 shadow-lg overflow-hidden" style={{
                   background: 'linear-gradient(135deg, var(--eurobudget-primary) 0%, var(--eurobudget-secondary) 100%)'
                 }}>
-                  <div className="card-body py-5 px-4 text-center">
+                  {/* BACKGROUND PATTERN IMAGE */}
+                  <div className="position-absolute top-0 end-0 w-50 h-100 opacity-10">
+                    <Image
+                      src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&auto=format&fit=crop"
+                      alt="European landscape pattern"
+                      fill
+                      sizes="50vw"
+                      style={{ objectFit: 'cover', objectPosition: 'left center' }}
+                      quality={60}
+                    />
+                  </div>
+                  
+                  <div className="card-body py-5 px-4 text-center position-relative">
                     <div className="fs-1 mb-3">🎁</div>
                     <h3 className="fw-bold mb-3">Get Our Free Europe Packing List</h3>
                     <p className="lead mb-4 opacity-75">
@@ -440,12 +517,26 @@ export default function Home() {
         </section>
       </FadeIn>
 
-      {/* Final CTA Section */}
+      {/* Final CTA Section with Background Image */}
       <FadeIn delay={700}>
-        <section className="section-padding text-white" style={{
-          background: 'linear-gradient(135deg, var(--eurobudget-primary) 0%, #1a365d 100%)'
-        }}>
-          <div className="container text-center">
+        <section className="section-padding text-white position-relative overflow-hidden">
+          {/* OPTIMIZED BACKGROUND IMAGE */}
+          <div className="position-absolute top-0 left-0 w-100 h-100">
+            <Image
+              src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1920&auto=format&fit=crop"
+              alt="European travel background"
+              fill
+              sizes="100vw"
+              style={{ objectFit: 'cover' }}
+              quality={85}
+              priority
+              placeholder="blur"
+              blurDataURL="data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAGAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AJ//2Q=="
+            />
+            <div className="position-absolute top-0 left-0 w-100 h-100 bg-gradient-to-r from-blue-900/90 to-indigo-900/90" />
+          </div>
+          
+          <div className="container text-center position-relative z-10">
             <h2 className="display-5 fw-bold mb-4">Start Your European Adventure Today</h2>
             <p className="lead mb-5 opacity-75">
               Everything you need to plan an unforgettable trip without breaking the bank
@@ -475,6 +566,6 @@ export default function Home() {
           </div>
         </section>
       </FadeIn>
-    </ErrorBoundary> /* ← CLOSED HERE */
+    </ErrorBoundary>
   );
 }

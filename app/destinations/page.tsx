@@ -1,4 +1,4 @@
-// app/destinations/page.tsx - COMPLETE FIXED VERSION
+// app/destinations/page.tsx - UPDATED
 import { getSortedPostsData } from '../../lib/posts';
 import Link from 'next/link';
 import ArticleCard from '../../components/ArticleCard';
@@ -24,10 +24,10 @@ export default function DestinationsPage() {
         </div>
       ) : (
         <>
-          <div className="row g-4">
+          {/* Use equal-height-cols class */}
+          <div className="row g-4 equal-height-cols">
             {allDestinations.map((destination) => (
               <div key={destination.slug} className="col-md-6 col-lg-4">
-                {/* ✅ FIXED: Pass destination object directly */}
                 <ArticleCard post={destination} />
               </div>
             ))}

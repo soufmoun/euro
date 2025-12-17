@@ -1,10 +1,10 @@
-// app/layout.tsx - FIXED (no whitespace)
+// app/layout.tsx - FIXED VERSION
 import './globals.css'
 import React from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import CookieConsentBanner from '../components/CookieConsentBanner';
-
+import GoogleAnalytics from '../components/analytics/GoogleAnalytics';
 
 export const metadata = {
   title: {
@@ -16,12 +16,12 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" data-scroll-behavior="smooth"><head>{/* NO WHITESPACE HERE */}
+    <html lang="en" data-scroll-behavior="smooth">
+      <head>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+        <meta name="google-adsense-account" content="ca-pub-YOUR_ID_HERE" />
+        <GoogleAnalytics />
       </head>
       <body className="d-flex flex-column min-vh-100">
         <Navbar />

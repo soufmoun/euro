@@ -1,0 +1,1 @@
+// types/destination.ts

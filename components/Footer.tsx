@@ -1,6 +1,5 @@
 // components/Footer.tsx - Updated version
 import Link from 'next/link';
-import { FaFacebook, FaInstagram, FaPinterest, FaTwitter } from 'react-icons/fa';
 
 export default function Footer() {
   return (
@@ -13,11 +12,11 @@ export default function Footer() {
               Honest budget travel guides for Europe. Real cost breakdowns, proven itineraries, 
               and money-saving tips for smart travelers.
             </p>
-            <div className="d-flex gap-3">
-              <a href="#" className="text-white-50"><FaFacebook size={20} /></a>
-              <a href="#" className="text-white-50"><FaInstagram size={20} /></a>
-              <a href="#" className="text-white-50"><FaPinterest size={20} /></a>
-              <a href="#" className="text-white-50"><FaTwitter size={20} /></a>
+            {/* Social media section removed - add back when icons are ready */}
+            <div className="mt-3">
+              <p className="text-white-50 small">
+                Follow us for travel inspiration and tips (coming soon)
+              </p>
             </div>
           </div>
           
@@ -59,9 +58,13 @@ export default function Footer() {
             <p className="small text-white-50">
               We earn commissions from qualifying purchases through affiliate links. This supports our free guides.
             </p>
-            <div className="small text-white-50">
-              <div>📍 Based in Berlin, Germany</div>
+            <div className="small text-white-50 mt-3">
+              {/* Updated location text */}
+              <div>📍 European destination guides & curated itineraries
+
+</div>
               <div>📧 contact@eurobudget.com</div>
+              <div className="mt-2">🌍 Covering 30+ European destinations</div>
             </div>
           </div>
         </div>

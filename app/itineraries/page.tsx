@@ -1,6 +1,7 @@
-// app/itineraries/page.tsx - IMPROVED VERSION
+// app/itineraries/page.tsx - FULLY OPTIMIZED WITH NEXT.JS IMAGES
 import Link from 'next/link';
-import { FaMapMarkerAlt, FaCalendarDays, FaMoneyBillWave, FaStar, FaUsers, FaArrowRight } from 'react-icons/fa';
+import Image from 'next/image'; // ADD THIS IMPORT
+import { FaMapMarkerAlt, FaMoneyBillWave, FaStar, FaUsers, FaArrowRight } from 'react-icons/fa';
 
 const itineraries = [
   {
@@ -177,29 +178,42 @@ export default function ItinerariesPage() {
         </div>
       </div>
 
-      {/* Itineraries Grid */}
+      {/* Itineraries Grid - OPTIMIZED WITH NEXT.JS IMAGES */}
       <div className="row g-4">
-        {itineraries.map((itinerary) => (
+        {itineraries.map((itinerary, index) => (
           <div key={itinerary.id} className="col-md-6 col-lg-4">
-            <div className="card h-100 border-0 shadow-sm hover-lift">
-              {/* Header with Image */}
-              <div className="position-relative">
-                <div 
-                  className="card-img-top"
-                  style={{
-                    height: '200px',
-                    backgroundImage: `url(${itinerary.image})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center'
+            <div className="card h-100 border-0 shadow-sm hover-lift overflow-hidden">
+              {/* OPTIMIZED IMAGE HEADER */}
+              <div className="position-relative" style={{ height: '200px' }}>
+                <Image
+                  src={itinerary.image}
+                  alt={`${itinerary.title} - European travel itinerary covering ${itinerary.route.join(', ')}`}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  style={{ 
+                    objectFit: 'cover',
+                    objectPosition: 'center'
                   }}
+                  className="card-img-top transition-transform duration-500 hover:scale-105"
+                  priority={index < 3} // Load first 3 images immediately
+                  quality={80}
+                  placeholder="blur"
+                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAGAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AJ//2Q=="
                 />
+                
+                {/* Loading Skeleton */}
+                <div className="image-loading-skeleton absolute inset-0 bg-gradient-to-r from-gray-100 via-gray-200 to-gray-100 bg-[length:200%_100%] animate-pulse" />
                 
                 {/* Tags */}
                 <div className="position-absolute top-0 start-0 m-3">
-                  {itinerary.tags.map((tag, index) => (
+                  {itinerary.tags.map((tag, tagIndex) => (
                     <span 
-                      key={index}
-                      className={`badge ${index === 0 ? 'bg-primary' : 'bg-dark'} me-1`}
+                      key={tagIndex}
+                      className={`badge ${tagIndex === 0 ? 'bg-primary' : 'bg-dark'} me-1`}
+                      style={{ 
+                        backdropFilter: 'blur(4px)',
+                        backgroundColor: tagIndex === 0 ? 'rgba(13, 110, 253, 0.9)' : 'rgba(33, 37, 41, 0.9)'
+                      }}
                     >
                       {tag}
                     </span>
@@ -208,7 +222,10 @@ export default function ItinerariesPage() {
                 
                 {/* Duration & Budget Badge */}
                 <div className="position-absolute bottom-0 end-0 m-3">
-                  <div className="bg-dark bg-opacity-75 text-white p-2 rounded">
+                  <div 
+                    className="bg-dark bg-opacity-85 text-white p-2 rounded-2 shadow-lg"
+                    style={{ backdropFilter: 'blur(2px)' }}
+                  >
                     <div className="small">{itinerary.duration}</div>
                     <div className="fw-bold">{itinerary.budget}</div>
                   </div>
@@ -232,24 +249,29 @@ export default function ItinerariesPage() {
                 </div>
                 
                 {/* Description */}
-                <p className="card-text text-muted flex-grow-1 mb-4">
+                <p className="card-text text-muted flex-grow-1 mb-4" style={{
+                  display: '-webkit-box',
+                  WebkitLineClamp: 3,
+                  WebkitBoxOrient: 'vertical',
+                  overflow: 'hidden'
+                }}>
                   {itinerary.description}
                 </p>
                 
                 {/* Route */}
                 <div className="mb-4">
                   <div className="d-flex align-items-center text-muted small mb-2">
-                    <FaMapMarkerAlt className="me-2" />
+                    <FaMapMarkerAlt className="me-2 text-primary" />
                     <span className="fw-semibold">Route:</span>
                   </div>
-                  <div className="d-flex align-items-center">
+                  <div className="d-flex align-items-center flex-wrap gap-1">
                     {itinerary.route.map((country, index) => (
                       <div key={index} className="d-flex align-items-center">
-                        <span className="badge bg-light text-dark border">
+                        <span className="badge bg-light text-dark border px-3 py-2 rounded-pill">
                           {country}
                         </span>
                         {index < itinerary.route.length - 1 && (
-                          <FaArrowRight className="mx-2 text-muted" />
+                          <FaArrowRight className="mx-2 text-muted opacity-50" />
                         )}
                       </div>
                     ))}
@@ -259,19 +281,23 @@ export default function ItinerariesPage() {
                 {/* Details */}
                 <div className="row g-2 mb-4">
                   <div className="col-6">
-                    <div className="bg-light p-3 rounded text-center">
+                    <div className="bg-light p-3 rounded-3 text-center border">
                       <div className="text-muted small mb-1">Difficulty</div>
-                      <div className={`fw-bold ${itinerary.difficulty === 'Easy' ? 'text-success' : 
-                                           itinerary.difficulty === 'Moderate' ? 'text-warning' : 'text-danger'}`}>
+                      <div className={`fw-bold fs-5 ${itinerary.difficulty === 'Easy' ? 'text-success' : 
+                                          itinerary.difficulty === 'Moderate' ? 'text-warning' : 'text-danger'}`}>
                         {itinerary.difficulty}
                       </div>
                     </div>
                   </div>
                   <div className="col-6">
-                    <div className="bg-light p-3 rounded text-center">
+                    <div className="bg-light p-3 rounded-3 text-center border">
                       <div className="text-muted small mb-1">Best For</div>
-                      <div className="fw-bold text-primary">
+                      <div className="fw-bold fs-5 text-primary">
                         {itinerary.bestFor.length} profiles
+                      </div>
+                      <div className="text-muted extra-small mt-1">
+                        {itinerary.bestFor.slice(0, 2).join(', ')}
+                        {itinerary.bestFor.length > 2 && '...'}
                       </div>
                     </div>
                   </div>
@@ -300,12 +326,26 @@ export default function ItinerariesPage() {
         ))}
       </div>
       
-      {/* Comparison & CTA Section */}
+      {/* Comparison & CTA Section with Optimized Background */}
       <div className="mt-5">
-        <div className="card border-0 bg-gradient text-white shadow-lg" style={{
-          background: 'linear-gradient(135deg, #2c3e50 0%, #3498db 100%)'
-        }}>
-          <div className="card-body p-5">
+        <div className="card border-0 text-white shadow-lg overflow-hidden position-relative">
+          {/* GRADIENT BACKGROUND WITH IMAGE */}
+          <div className="position-absolute top-0 left-0 w-100 h-100">
+            <Image
+              src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=1200&auto=format&fit=crop"
+              alt="European map background"
+              fill
+              sizes="100vw"
+              style={{ objectFit: 'cover' }}
+              quality={70}
+              className="opacity-20"
+            />
+            <div className="position-absolute top-0 left-0 w-100 h-100" style={{
+              background: 'linear-gradient(135deg, #2c3e50 0%, #3498db 100%)'
+            }} />
+          </div>
+          
+          <div className="card-body p-5 position-relative z-10">
             <div className="row align-items-center">
               <div className="col-lg-8">
                 <h3 className="fw-bold mb-3">Not Sure Which Itinerary Fits You?</h3>
@@ -322,7 +362,16 @@ export default function ItinerariesPage() {
                 </div>
               </div>
               <div className="col-lg-4 text-center">
-                <div className="display-1">🗺️</div>
+                <div className="position-relative" style={{ height: '150px', width: '150px' }}>
+                  <Image
+                    src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=300&auto=format&fit=crop"
+                    alt="Travel compass icon"
+                    fill
+                    sizes="150px"
+                    style={{ objectFit: 'contain' }}
+                    quality={90}
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -378,9 +427,8 @@ export default function ItinerariesPage() {
             <div className="card-body p-4">
               <h5 className="fw-bold mb-4">What Travelers Say</h5>
               <div className="d-flex align-items-start mb-4">
-                <div className="flex-shrink-0">
-                  <div className="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center"
-                    style={{ width: '50px', height: '50px' }}>
+                <div className="flex-shrink-0 position-relative" style={{ width: '50px', height: '50px' }}>
+                  <div className="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center w-100 h-100">
                     AJ
                   </div>
                 </div>
