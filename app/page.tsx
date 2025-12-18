@@ -130,8 +130,8 @@ export default function Home() {
     },
     {
       icon: '⭐',
-      title: 'No Sponsored Content',
-      description: 'We don\'t accept paid promotions. Our recommendations are based on genuine experiences, not commissions.',
+      title: 'Transparent Recommendations',
+      description: 'Any affiliate links are clearly marked. We only recommend what we genuinely use and trust.',
       image: '/icons/star.svg'
     },
     {
