@@ -122,29 +122,9 @@ export default function BlogPage() {
               </div>
             ))}
           </div>
+          </div>
           
-          {/* Pagination */}
-          <nav className="mt-5">
-            <ul className="pagination justify-content-center">
-              <li className="page-item disabled">
-                <span className="page-link">Previous</span>
-              </li>
-              <li className="page-item active">
-                <span className="page-link">1</span>
-              </li>
-              <li className="page-item">
-                <a className="page-link" href="#">2</a>
-              </li>
-              <li className="page-item">
-                <a className="page-link" href="#">3</a>
-              </li>
-              <li className="page-item">
-                <a className="page-link" href="#">Next</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-        
+  
         {/* Sidebar - Right Column */}
         <div className="col-lg-4">
           <div className="position-sticky" style={{ top: '20px' }}>
@@ -183,26 +163,43 @@ export default function BlogPage() {
               </div>
             </div>
             
-            {/* Newsletter */}
-            <div className="card border-0 shadow-sm bg-primary text-white mb-4">
+            {/* Newsletter Coming Soon */}
+            <div className="card border-0 shadow-sm bg-light mb-4">
               <div className="card-body">
-                <h5 className="fw-bold mb-3">Get Weekly Tips</h5>
-                <p className="small opacity-75 mb-3">
-                  Join 50,000+ travelers getting our weekly Europe budget tips.
+                <h5 className="fw-bold mb-3">📧 Newsletter Coming Soon</h5>
+                <p className="small text-muted mb-3">
+                  We're focused on creating the best destination guides first.
+                  Newsletter launching soon with exclusive Europe travel tips!
                 </p>
-                <div className="mb-3">
-                  <input 
-                    type="email" 
-                    className="form-control form-control-sm" 
-                    placeholder="Your email"
-                  />
+                <div className="alert alert-info small mb-3">
+                  <span className="fw-semibold">Focus:</span> Quality guides over emails for now
                 </div>
-                <button className="btn btn-light btn-sm w-100 fw-semibold">
-                  Subscribe
-                </button>
               </div>
             </div>
             
+            {/* Travel Planning Tools */}
+            <div className="card border-0 shadow-sm p-3">
+              <h5 className="mb-3">🛠️ Planning Tools</h5>
+              <div className="list-group list-group-flush small">
+                <a href="https://www.skyscanner.com" target="_blank" rel="noopener noreferrer" className="list-group-item list-group-item-action border-0 px-0 py-1 d-flex align-items-center">
+                  <span className="me-2">✈️</span>
+                  <span>Flights</span>
+                </a>
+                <a href="https://www.booking.com" target="_blank" rel="noopener noreferrer" className="list-group-item list-group-item-action border-0 px-0 py-1 d-flex align-items-center">
+                  <span className="me-2">🏨</span>
+                  <span>Hotels</span>
+                </a>
+                <a href="https://www.trainline.com" target="_blank" rel="noopener noreferrer" className="list-group-item list-group-item-action border-0 px-0 py-1 d-flex align-items-center">
+                  <span className="me-2">🚆</span>
+                  <span>Trains</span>
+                </a>
+                <a href="https://www.getyourguide.com" target="_blank" rel="noopener noreferrer" className="list-group-item list-group-item-action border-0 px-0 py-1 d-flex align-items-center">
+                  <span className="me-2">🎟️</span>
+                  <span>Tours</span>
+                </a>
+              </div>
+            </div>
+
             {/* Popular Posts */}
             <div className="card border-0 shadow-sm">
               <div className="card-body">

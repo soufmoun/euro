@@ -45,17 +45,17 @@ export default function AboutPage() {
                     </div>
                   </div>
                   <div className="col-md-9">
-                    <h4 className="mb-2">Sarah Johnson</h4>
+                    <h4 className="mb-2">Soufiane Mountachir</h4>
                     <p className="text-muted mb-3">Founder & Lead Travel Writer</p>
                     <p className="mb-3">
-                      Sarah has been traveling Europe on a budget for over 8 years, visiting more than 
-                      35 European cities while spending an average of €45 per day. Her expertise in 
+                      Soufiane has been traveling Europe on a budget for over 3 years, visiting more than 
+                      35 European cities while spending an average of €45 per day. His expertise in 
                       affordable European travel comes from firsthand experience living in 4 different 
                       European countries and continuous research into budget-friendly travel options.
                     </p>
                     <p className="mb-0">
-                      Sarah founded EuroBudget to help other travelers experience Europe without financial 
-                      stress. Her work has been dedicated to proving that European travel is accessible 
+                      Soufiane founded EuroBudget to help other travelers experience Europe without financial 
+                      stress. His work has been dedicated to proving that European travel is accessible 
                       to everyone with the right planning and insider knowledge.
                     </p>
                   </div>
@@ -72,7 +72,7 @@ export default function AboutPage() {
                 <div className="row">
                   <div className="col-md-6">
                     <ul className="list-unstyled">
-                      <li className="mb-2">✅ 8+ years budget travel experience</li>
+                      <li className="mb-2">✅ 3+ years budget travel experience</li>
                       <li className="mb-2">✅ 35+ European cities visited</li>
                       <li className="mb-2">✅ Lived in 4 European countries</li>
                       <li className="mb-2">✅ Fluent in 3 European languages</li>
@@ -81,7 +81,7 @@ export default function AboutPage() {
                   <div className="col-md-6">
                     <ul className="list-unstyled">
                       <li className="mb-2">✅ Average daily budget: €45</li>
-                      <li className="mb-2">✅ 50,000+ travelers helped</li>
+                      <li className="mb-2">✅ 100% real content</li>
                       <li className="mb-2">✅ Featured in travel publications</li>
                       <li className="mb-2">✅ Regular price research & updates</li>
                     </ul>
@@ -107,17 +107,17 @@ export default function AboutPage() {
                 </div>
               </div>
               <div className="col-md-6">
-                <div className="card h-100 border-0 shadow-sm">
-                  <div className="card-body text-center p-4">
-                    <div className="fs-1 mb-3">⭐</div>
-                    <h5>No Sponsored Content</h5>
-                    <p className="text-muted">
-                      We don't accept paid promotions. Our recommendations are based on 
-                      genuine experiences, not commissions or partnerships.
-                    </p>
-                  </div>
+              <div className="card h-100 border-0 shadow-sm">
+                <div className="card-body text-center p-4">
+                  <div className="fs-1 mb-3">⭐</div>
+                  <h5>Honest Recommendations</h5>
+                  <p className="text-muted">
+                    We only recommend products and services we genuinely use and believe in. 
+                    Any affiliate links are clearly marked and never affect our honest reviews.
+                  </p>
                 </div>
               </div>
+            </div>
               <div className="col-md-6">
                 <div className="card h-100 border-0 shadow-sm">
                   <div className="card-body text-center p-4">
@@ -145,27 +145,30 @@ export default function AboutPage() {
             </div>
           </FadeIn>
 
-          {/* Our Story */}
-          <FadeIn delay={500}>
-            <div className="card shadow-sm border-0 mb-4">
-              <div className="card-body p-4">
-                <h3 className="h4 mb-3">Our Story</h3>
-                <p>
-                  EuroBudget started as a personal travel blog in 2018 when Sarah documented her 
-                  first solo trip through Eastern Europe on a shoestring budget. What began as 
-                  notes for friends and family quickly grew into a comprehensive resource as 
-                  more travelers sought authentic, affordable European travel advice.
-                </p>
-                <p className="mb-0">
-                  Today, EuroBudget has helped over 50,000 travelers plan their European adventures 
-                  through detailed guides, personalized advice, and a commitment to honest, 
-                  budget-friendly travel information. We continue to expand our destination 
-                  coverage and update our content to ensure every traveler can experience the 
-                  Europe of their dreams.
-                </p>
-              </div>
-            </div>
-          </FadeIn>
+          {/* Our Goals for 2024 */}
+<FadeIn delay={500}>
+  <div className="card shadow-sm border-0 mb-4">
+    <div className="card-body p-4">
+      <h3 className="h4 mb-3">Our Goals for 2025</h3>
+      <p>
+        EuroBudget is launching with comprehensive guides for +12 European destinations, 
+        each featuring real cost breakdowns and practical budget advice.
+      </p>
+      <p className="mb-0">
+        Our mission is to become the most trusted resource for affordable European travel by providing 
+        honest, up-to-date information that actually helps travelers plan their trips without financial stress.
+      </p>
+      <div className="mt-3">
+        <ul className="list-unstyled">
+          <li className="mb-2">✅ Launch with 12+ destination guides</li>
+          <li className="mb-2">✅ Add 5+ detailed itineraries</li>
+          <li className="mb-2">✅ Continuously update prices and information</li>
+          <li>✅ Expand to 25+ destinations by end of year</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</FadeIn>
 
           {/* CTA */}
           <FadeIn delay={600}>

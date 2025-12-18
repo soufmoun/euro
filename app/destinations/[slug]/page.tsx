@@ -281,31 +281,33 @@ export default async function DestinationPage({
               </div>
             </div>
 
-            {/* Affiliate Products Section */}
-            {affiliateProducts.length > 0 && (
-              <div className="mt-5">
-                <h3 className="h4 mb-4">🎯 Recommended Products & Tours</h3>
-                <p className="text-muted mb-4">
-                  These carefully selected partners help you save money and enhance your trip.
-                  We earn a small commission if you book through these links at no extra cost to you.
-                </p>
-                
-                <div className="row g-4">
-                {affiliateProducts.map((product, index) => (
-  <div key={`${product.id}-${index}`} className="col-12">
-                      <AffiliateProductCard
-                        {...product}
-                        affiliateLink={generateAffiliateLink(
-                          product.platform,
-                          product.productId,
-                          { utm_source: 'eurobudget', utm_medium: 'guide' }
-                        )}
-                      />
-                    </div>
-                  ))}
-                </div>
-              </div>
+             {/* Affiliate Products Section - Temporarily Disabled for Launch */}
+{/* 
+{affiliateProducts.length > 0 && (
+  <div className="mt-5">
+    <h3 className="h4 mb-4">🎯 Recommended Products & Tours</h3>
+    <p className="text-muted mb-4">
+      These carefully selected partners help you save money and enhance your trip.
+      We earn a small commission if you book through these links at no extra cost to you.
+    </p>
+    
+    <div className="row g-4">
+      {affiliateProducts.map((product, index) => (
+        <div key={`${product.id}-${index}`} className="col-12">
+          <AffiliateProductCard
+            {...product}
+            affiliateLink={generateAffiliateLink(
+              product.platform,
+              product.productId,
+              { utm_source: 'eurobudget', utm_medium: 'guide' }
             )}
+          />
+        </div>
+      ))}
+    </div>
+  </div>
+)}
+*/}
 
             {/* AdSense Ad Space 3 - In content */}
             <div className="text-center my-5">
@@ -336,26 +338,31 @@ export default async function DestinationPage({
           </div>
 
           {/* SIDEBAR COLUMN (4 columns on large, full on mobile) */}
-          <div className="col-lg-4 position-sticky" style={{ top: '20px', height: 'fit-content' }}>
-            {/* Compact Sidebar Ad Space */}
-            <div className="card border-0 shadow-sm p-3 mb-4 text-center" style={{ minHeight: '250px' }}>
-              <div className="d-flex flex-column justify-content-between h-100">
-                <div>
-                  <span className="badge bg-secondary mb-2">Sponsored</span>
-                  <h6 className="fw-bold">✨ Travel Deals</h6>
-                  <p className="small text-muted mb-2">
-                    Save up to 60% on your next trip
-                  </p>
-                </div>
-                <div>
-                  <button className="btn btn-primary btn-sm w-100 mb-2">
-                    🔍 Find Deals
-                  </button>
-                  <p className="text-muted x-small mb-0">Advertise with us</p>
-                </div>
+            <div className="col-lg-4 position-sticky" style={{ top: '20px', height: 'fit-content' }}>
+
+              {/* Travel Planning Tools */}
+            <div className="card border-0 shadow-sm p-3">
+              <h5 className="mb-3">🛠️ Planning Tools</h5>
+              <div className="list-group list-group-flush small">
+                <a href="https://www.skyscanner.com" target="_blank" rel="noopener noreferrer" className="list-group-item list-group-item-action border-0 px-0 py-1 d-flex align-items-center">
+                  <span className="me-2">✈️</span>
+                  <span>Flights</span>
+                </a>
+                <a href="https://www.booking.com" target="_blank" rel="noopener noreferrer" className="list-group-item list-group-item-action border-0 px-0 py-1 d-flex align-items-center">
+                  <span className="me-2">🏨</span>
+                  <span>Hotels</span>
+                </a>
+                <a href="https://www.trainline.com" target="_blank" rel="noopener noreferrer" className="list-group-item list-group-item-action border-0 px-0 py-1 d-flex align-items-center">
+                  <span className="me-2">🚆</span>
+                  <span>Trains</span>
+                </a>
+                <a href="https://www.getyourguide.com" target="_blank" rel="noopener noreferrer" className="list-group-item list-group-item-action border-0 px-0 py-1 d-flex align-items-center">
+                  <span className="me-2">🎟️</span>
+                  <span>Tours</span>
+                </a>
               </div>
             </div>
-            
+
             {/* More Destinations */}
             <div className="card border-0 shadow-sm p-3 mb-4">
               <h5 className="mb-3">✈️ More Destinations</h5>
@@ -415,44 +422,15 @@ export default async function DestinationPage({
               </ul>
             </div>
 
-            {/* Newsletter Signup (Compact) */}
-            <div className="card border-0 shadow-sm p-3 mb-4 bg-primary text-white">
-              <h5 className="mb-2">📧 Budget Travel Tips</h5>
-              <p className="small mb-2">Get weekly Europe budget tips</p>
-              <div className="input-group input-group-sm">
-                <input 
-                  type="email" 
-                  className="form-control" 
-                  placeholder="Your email" 
-                />
-                <button className="btn btn-light btn-sm" type="button">
-                  Join
-                </button>
-              </div>
-              <small className="d-block mt-2 opacity-75">No spam, unsubscribe anytime</small>
-            </div>
-
-            {/* Travel Planning Tools */}
-            <div className="card border-0 shadow-sm p-3">
-              <h5 className="mb-3">🛠️ Planning Tools</h5>
-              <div className="list-group list-group-flush small">
-                <a href="https://www.skyscanner.com" target="_blank" rel="noopener noreferrer" className="list-group-item list-group-item-action border-0 px-0 py-1 d-flex align-items-center">
-                  <span className="me-2">✈️</span>
-                  <span>Flights</span>
-                </a>
-                <a href="https://www.booking.com" target="_blank" rel="noopener noreferrer" className="list-group-item list-group-item-action border-0 px-0 py-1 d-flex align-items-center">
-                  <span className="me-2">🏨</span>
-                  <span>Hotels</span>
-                </a>
-                <a href="https://www.trainline.com" target="_blank" rel="noopener noreferrer" className="list-group-item list-group-item-action border-0 px-0 py-1 d-flex align-items-center">
-                  <span className="me-2">🚆</span>
-                  <span>Trains</span>
-                </a>
-                <a href="https://www.getyourguide.com" target="_blank" rel="noopener noreferrer" className="list-group-item list-group-item-action border-0 px-0 py-1 d-flex align-items-center">
-                  <span className="me-2">🎟️</span>
-                  <span>Tours</span>
-                </a>
-              </div>
+            {/* Newsletter Coming Soon */}
+            <div className="card border-0 shadow-sm p-3 mb-4 bg-light">
+              <h5 className="mb-2">📧 Newsletter Coming Soon</h5>
+              <p className="small mb-3">
+                Get budget travel tips delivered to your inbox (launching soon)
+              </p>
+              <Link href="/contact?interest=newsletter" className="btn btn-outline-primary btn-sm">
+                Notify Me When Ready
+              </Link>
             </div>
           </div>
         </div>

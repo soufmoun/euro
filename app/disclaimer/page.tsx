@@ -119,8 +119,8 @@ export default function DisclaimerPage() {
                   <h2 className="h4 fw-bold mb-3">Contact Information</h2>
                   <p>For any questions regarding this disclaimer, please contact us:</p>
                   <ul className="list-unstyled">
-                    <li>📧 Email: <strong>contact@eurobudget.com</strong></li>
-                    <li>🌐 Website: <strong>https://eurobudget.com/contact</strong></li>
+                    <li>📧 Email: <strong>contact@eurobudget.travel</strong></li>
+                    <li>🌐 Website: <strong>https://eurobudget.travel/contact</strong></li>
                   </ul>
                 </section>
   

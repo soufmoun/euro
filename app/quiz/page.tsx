@@ -269,7 +269,7 @@ export default function QuizPage() {
               <div className="card border-0 bg-light">
                 <div className="card-body">
                   <div className="fs-1 mb-2">✈️</div>
-                  <h6 className="fw-bold">50K+ Travelers</h6>
+                  <h6 className="fw-bold"> Travelers</h6>
                   <p className="text-muted small mb-0">Successfully guided</p>
                 </div>
               </div>

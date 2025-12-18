@@ -37,7 +37,7 @@ export default function Footer() {
               <li><Link href="/blog" className="text-white-50 text-decoration-none">Travel Blog</Link></li>
               <li><Link href="/itineraries" className="text-white-50 text-decoration-none">Itineraries</Link></li>
               <li><Link href="/tips" className="text-white-50 text-decoration-none">Budget Tips</Link></li>
-              <li><Link href="/packing" className="text-white-50 text-decoration-none">Packing Lists</Link></li>
+              <li><Link href="/blog/europe-packing-list" className="text-white-50 text-decoration-none">Packing Lists</Link></li>
               <li><Link href="/tools" className="text-white-50 text-decoration-none">Travel Tools</Link></li>
             </ul>
           </div>
@@ -64,7 +64,7 @@ export default function Footer() {
 
 </div>
               <div>📧 contact@eurobudget.com</div>
-              <div className="mt-2">🌍 Covering 30+ European destinations</div>
+              <div className="mt-2">🌍 Covering +12 European destinations</div>
             </div>
           </div>
         </div>

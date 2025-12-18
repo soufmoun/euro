@@ -5,13 +5,24 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import CookieConsentBanner from '../components/CookieConsentBanner';
 import GoogleAnalytics from '../components/analytics/GoogleAnalytics';
+import type { Metadata } from 'next';
 
-export const metadata = {
+export const metadata: Metadata =  {
   title: {
     default: 'EuroBudget - Travel Europe for Less',
     template: '%s | EuroBudget'
   },
   description: 'Expert budget travel guides for Europe. Explore destinations affordably with verified price breakdowns.',
+  keywords: ['Europe travel', 'budget travel', 'travel guides', 'European destinations'],
+  authors: [{ name: 'EuroBudget Team' }],
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://eurobudget.travel',
+    title: 'EuroBudget - Honest Europe Travel Guides',
+    description: 'Real budget travel guides for European destinations',
+    siteName: 'EuroBudget',
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

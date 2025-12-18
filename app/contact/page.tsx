@@ -48,7 +48,7 @@ export default function ContactPage() {
                         <div>
                           <h6 className="fw-bold mb-1">General Inquiries</h6>
                           <a href="mailto:hello@eurobudget.com" className="text-muted mb-0">
-                            hello@eurobudget.com
+                            contact@eurobudget.travel
                           </a>
                           <small className="text-muted d-block">Response within 24 hours</small>
                         </div>
@@ -61,7 +61,7 @@ export default function ContactPage() {
                         <div>
                           <h6 className="fw-bold mb-1">Privacy Concerns</h6>
                           <a href="mailto:privacy@eurobudget.com" className="text-muted mb-0">
-                            privacy@eurobudget.com
+                          contact@eurobudget.travel
                           </a>
                           <small className="text-muted d-block">For data protection inquiries</small>
                         </div>
@@ -74,7 +74,7 @@ export default function ContactPage() {
                         <div>
                           <h6 className="fw-bold mb-1">Partnerships</h6>
                           <a href="mailto:partners@eurobudget.com" className="text-muted mb-0">
-                            partners@eurobudget.com
+                          contact@eurobudget.travel
                           </a>
                           <small className="text-muted d-block">Business collaborations</small>
                         </div>

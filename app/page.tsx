@@ -507,7 +507,7 @@ export default function Home() {
                       </div>
                     </div>
                     <p className="small mt-3 opacity-75">
-                      Join 50,000+ travelers. Unsubscribe anytime. No spam, just valuable travel tips.
+                      Join our travelers. Unsubscribe anytime. No spam, just valuable travel tips.
                     </p>
                   </div>
                 </div>

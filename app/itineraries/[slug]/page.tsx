@@ -4,6 +4,8 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import FadeIn from '../../../components/FadeIn';
 import Image from 'next/image';
+import type { Metadata } from 'next';
+
 
 // Generate static paths
 export async function generateStaticParams() {
@@ -22,7 +24,7 @@ export async function generateMetadata({
   params 
 }: { 
   params: Promise<{ slug: string }> 
-}) {
+}): Promise<Metadata> {
   const { slug } = await params;
   const itinerary = getItineraryBySlug(slug);
   

@@ -128,10 +128,10 @@ export default function ItinerariesPage() {
         </p>
         <div className="d-flex flex-wrap justify-content-center gap-3">
           <span className="badge bg-primary px-3 py-2">
-            <FaUsers className="me-2" /> 50K+ Travelers Guided
+            <FaUsers className="me-2" />Travelers Guided
           </span>
           <span className="badge bg-success px-3 py-2">
-            <FaStar className="me-2" /> 4.8/5 Average Rating
+            <FaStar className="me-2" /> xx/5 Average Rating
           </span>
           <span className="badge bg-info px-3 py-2">
             <FaMoneyBillWave className="me-2" /> €45 Avg. Daily Cost
@@ -416,47 +416,6 @@ export default function ItinerariesPage() {
               <div id="faq3" className="accordion-collapse collapse" data-bs-parent="#itineraryFAQ">
                 <div className="accordion-body">
                   Absolutely! Use our <Link href="/quiz">quiz</Link> for personalized recommendations or <Link href="/contact">contact us</Link> for fully customized itineraries.
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div className="col-lg-6">
-          <div className="card border-0 shadow-sm h-100">
-            <div className="card-body p-4">
-              <h5 className="fw-bold mb-4">What Travelers Say</h5>
-              <div className="d-flex align-items-start mb-4">
-                <div className="flex-shrink-0 position-relative" style={{ width: '50px', height: '50px' }}>
-                  <div className="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center w-100 h-100">
-                    AJ
-                  </div>
-                </div>
-                <div className="flex-grow-1 ms-3">
-                  <h6 className="fw-bold mb-1">Amanda J.</h6>
-                  <div className="text-warning mb-2">
-                    <FaStar /><FaStar /><FaStar /><FaStar /><FaStar />
-                  </div>
-                  <p className="text-muted small">
-                    "The Paris & Rome itinerary was perfect for our honeymoon! Every detail was spot on, and we saved €300 using their budget tips."
-                  </p>
-                </div>
-              </div>
-              <div className="d-flex align-items-start">
-                <div className="flex-shrink-0">
-                  <div className="rounded-circle bg-success text-white d-flex align-items-center justify-content-center"
-                    style={{ width: '50px', height: '50px' }}>
-                    MS
-                  </div>
-                </div>
-                <div className="flex-grow-1 ms-3">
-                  <h6 className="fw-bold mb-1">Marcus S.</h6>
-                  <div className="text-warning mb-2">
-                    <FaStar /><FaStar /><FaStar /><FaStar /><FaStar />
-                  </div>
-                  <p className="text-muted small">
-                    "As a solo traveler, the Eastern Europe tour was amazing. Met other budget travelers and stayed under €40/day!"
-                  </p>
                 </div>
               </div>
             </div>

@@ -15,7 +15,7 @@ export default function PrivacyPolicyPage() {
                 <p>
                   Welcome to EuroBudget ("we," "our," "us"). We are committed to protecting your personal 
                   information and your right to privacy. If you have any questions or concerns about this 
-                  privacy policy, please contact us at <strong>contact@eurobudget.com</strong>.
+                  privacy policy, please contact us at <strong>contact@eurobudget.travel</strong>.
                 </p>
               </section>
 
@@ -93,7 +93,7 @@ export default function PrivacyPolicyPage() {
                 <p>If you have any questions about this Privacy Policy, please contact us:</p>
                 <ul className="list-unstyled">
                   <li>By email: <strong>contact@eurobudget.com</strong></li>
-                  <li>By visiting this page on our website: <strong>https://eurobudget.com/contact</strong></li>
+                  <li>By visiting this page on our website: <strong>https://eurobudget.travel/contact</strong></li>
                 </ul>
               </section>
 
