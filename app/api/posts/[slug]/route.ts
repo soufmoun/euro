@@ -4,17 +4,29 @@ import { getPostData } from '@/lib/server/posts';
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { slug: string } }
+  context: { params: Promise<{ slug: string }> }
 ) {
   try {
-    const slug = params.slug;
+    const params = await context.params;
+    const { slug } = params;
+    
     const post = getPostData(slug);
+    
+    // Optional: Check if post exists
+    if (!post) {
+      return NextResponse.json(
+        { error: `Post with slug "${slug}" not found` },
+        { status: 404 }
+      );
+    }
+    
     return NextResponse.json(post);
   } catch (error) {
-    console.error(`Error fetching post ${params.slug}:`, error);
+    console.error('Error in GET /api/posts/[slug]:', error);
+    
     return NextResponse.json(
-      { error: 'Post not found' },
-      { status: 404 }
+      { error: 'Internal server error' },
+      { status: 500 }
     );
   }
 }
