@@ -47,7 +47,6 @@ const nextConfig = {
   
   // Performance optimizations
   compress: true,
-  swcMinify: true,
   reactStrictMode: true,
   
   // For TypeScript errors during build
