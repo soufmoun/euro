@@ -1,23 +1,19 @@
 'use client';
 
-import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 
-interface MarkdownRendererProps {
+interface Props {
   content: string;
   className?: string;
 }
 
-export default function MarkdownRenderer({
-  content,
-  className,
-}: MarkdownRendererProps) {
+export default function MarkdownRenderer({ content, className }: Props) {
   return (
-    <article className={className ?? 'prose max-w-none'}>
+    <div className={className}>
       <ReactMarkdown remarkPlugins={[remarkGfm]}>
         {content}
       </ReactMarkdown>
-    </article>
+    </div>
   );
 }
