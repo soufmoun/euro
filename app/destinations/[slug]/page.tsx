@@ -6,7 +6,7 @@ import {
 } from "../../../lib/posts/destinations";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import Markdown from "react-markdown";
+import MarkdownRenderer from '../../../components/MarkdownRenderer';
 import Script from 'next/script';
 import AdSenseBanner from '../../../components/ads/AdSenseBanner';
 import AffiliateProductCard from '../../../components/AffiliateProductCard';
@@ -230,9 +230,7 @@ export default async function DestinationPage({
 
             {/* MARKDOWN CONTENT */}
             <div className="card border-0 shadow-sm p-4 mb-4">
-              <Markdown className="content">
-                {post.content}
-              </Markdown>
+            <MarkdownRenderer content={post.content} />
             </div>
 
             {/* FAQ Section - Generic for all destinations */}

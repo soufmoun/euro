@@ -1,19 +1,33 @@
 'use client';
 
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
+import { marked } from 'marked';
+import { useEffect, useState } from 'react';
 
 interface Props {
   content: string;
-  className?: string;
 }
 
-export default function MarkdownRenderer({ content, className }: Props) {
+export default function MarkdownRenderer({ content }: Props) {
+  const [htmlContent, setHtmlContent] = useState('');
+
+  useEffect(() => {
+    const parseMarkdown = async () => {
+      marked.setOptions({
+        gfm: true,
+        breaks: true,
+      });
+      
+      const parsedHtml = await marked(content);
+      setHtmlContent(parsedHtml);
+    };
+
+    parseMarkdown();
+  }, [content]);
+
   return (
-    <div className={className}>
-      <ReactMarkdown remarkPlugins={[remarkGfm]}>
-        {content}
-      </ReactMarkdown>
-    </div>
+    <div 
+      className="prose prose-lg max-w-none"
+      dangerouslySetInnerHTML={{ __html: htmlContent }}
+    />
   );
 }
