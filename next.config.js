@@ -1,5 +1,4 @@
-// next.config.js - FIXED VERSION
-/** @type {import('next').NextConfig} */
+﻿/** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
     remotePatterns: [
@@ -17,7 +16,11 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: '**.cloudinary.com',
+        hostname: 'cloudinary.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
       },
       {
         protocol: 'https',
@@ -29,8 +32,7 @@ const nextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 60 * 60 * 24 * 30, // 30 days cache
   },
-  
-  // Security headers
+
   async headers() {
     return [
       {
@@ -44,21 +46,13 @@ const nextConfig = {
       },
     ];
   },
-  
-  // Performance optimizations
+
   compress: true,
   reactStrictMode: true,
-  
-  // For TypeScript errors during build
+
   typescript: {
     ignoreBuildErrors: false,
   },
-  
-  // For larger builds
-  experimental: {
-    workerThreads: false,
-    cpus: 1,
-  }
 };
 
 module.exports = nextConfig;

@@ -464,7 +464,8 @@ export default function Home() {
         </section>
       </FadeIn>
 
-      {/* Newsletter Signup */}
+    
+      {/* Newsletter Signup 
       <FadeIn delay={600}>
         <section className="section-padding">
           <div className="container">
@@ -473,7 +474,9 @@ export default function Home() {
                 <div className="card bg-gradient text-white border-0 shadow-lg overflow-hidden" style={{
                   background: 'linear-gradient(135deg, var(--eurobudget-primary) 0%, var(--eurobudget-secondary) 100%)'
                 }}>
-                  {/* BACKGROUND PATTERN IMAGE */}
+
+                    BACKGROUND PATTERN IMAGE 
+                    
                   <div className="position-absolute top-0 end-0 w-50 h-100 opacity-10">
                     <Image
                       src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&auto=format&fit=crop"
@@ -516,6 +519,7 @@ export default function Home() {
           </div>
         </section>
       </FadeIn>
+      */}
 
       {/* Final CTA Section with Background Image */}
       <FadeIn delay={700}>
